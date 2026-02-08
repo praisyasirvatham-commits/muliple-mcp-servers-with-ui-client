@@ -1,0 +1,39 @@
+
+
+                ╭──────────────────────────────────────────────────────────────────────────────╮                
+                │                                                                              │                
+                │                                                                              │                
+                │                         ▄▀▀ ▄▀█ █▀▀ ▀█▀ █▀▄▀█ █▀▀ █▀█                        │                
+                │                         █▀  █▀█ ▄▄█  █  █ ▀ █ █▄▄ █▀▀                        │                
+                │                                                                              │                
+                │                                                                              │                
+                │                                FastMCP 2.14.5                                │                
+                │                            https://gofastmcp.com                             │                
+                │                                                                              │                
+                │                    🖥  Server:      E-Commerce MCP Server                     │                
+                │                    🚀 Deploy free: https://fastmcp.cloud                     │                
+                │                                                                              │                
+                ╰──────────────────────────────────────────────────────────────────────────────╯                
+                ╭──────────────────────────────────────────────────────────────────────────────╮                
+                │                          ✨ FastMCP 3.0 is coming!                           │                
+                │       Pin `fastmcp < 3` in production, then upgrade when you're ready.       │                
+                ╰──────────────────────────────────────────────────────────────────────────────╯                
+
+
+[02/08/26 15:54:54] INFO     Starting MCP server 'E-Commerce MCP Server' with transport           server.py:2580
+                             'streamable-http' on http://localhost:8020/mcp                                     
+INFO:     Started server process [19648]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://localhost:8020 (Press CTRL+C to quit)
+INFO:     ::1:61185 - "GET /health HTTP/1.1" 200 OK
+INFO:     ::1:61187 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     ::1:61189 - "GET /mcp HTTP/1.1" 200 OK
+INFO:     ::1:61188 - "POST /mcp HTTP/1.1" 202 Accepted
+INFO:     ::1:61190 - "POST /mcp HTTP/1.1" 200 OK
+INFO:     ::1:61191 - "DELETE /mcp HTTP/1.1" 200 OK
+INFO:     Shutting down
+ERROR:    Cancel 0 running task(s), timeout graceful shutdown exceeded
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [19648]

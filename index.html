@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>MCP Client UI</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, Roboto, "Segoe UI", sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            font-size: 16px
+        }
+
+        button {
+            padding: 10px 14px;
+            font-size: 16px
+        }
+
+        pre {
+            background: #111;
+            color: #eee;
+            padding: 12px;
+            border-radius: 6px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MCP Client (Natural language)</h1>
+    <p>Type a natural-language request and press Ask. The UI will send it to the orchestrator which chooses a tool and
+        calls it.</p>
+    <textarea id="query">list products</textarea>
+    <div style="margin-top:8px">
+        <button id="ask">Ask</button>
+    </div>
+    <h3>Response</h3>
+    <div id="resp">
+        <pre id="out">(no response yet)</pre>
+    </div>
+
+    <script>
+        document.getElementById('ask').onclick = async function () {
+            const q = document.getElementById('query').value;
+            document.getElementById('out').textContent = '...loading';
+            try {
+                const r = await fetch('/ask', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ query: q }) });
+                const j = await r.json();
+                document.getElementById('out').textContent = JSON.stringify(j, null, 2);
+            } catch (e) {
+                document.getElementById('out').textContent = String(e);
+            }
+        }
+    </script>
+</body>
+
+</html>
